@@ -5,21 +5,11 @@ CREATE TABLE cf_services (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(100) NOT NULL,
     description TEXT,
-    duree_minutes INT NOT NULL DEFAULT 60,
+    duree_estimee_min INT COMMENT 'Durée minimale estimée en minutes (à titre indicatif)',
+    duree_estimee_max INT COMMENT 'Durée maximale estimée en minutes (à titre indicatif)',
     actif BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- Table des créneaux horaires disponibles
-CREATE TABLE cf_horaires (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    jour_semaine TINYINT NOT NULL, -- 1=Lundi, 7=Dimanche
-    heure_debut TIME NOT NULL,     -- 07:00
-    heure_fin TIME NOT NULL,       -- 18:00
-    intervalle_minutes INT NOT NULL DEFAULT 15,
-    actif BOOLEAN DEFAULT TRUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Table des réservations
@@ -28,7 +18,7 @@ CREATE TABLE cf_reservations (
     service_id INT NOT NULL,
     date_reservation DATE NOT NULL,
     heure_debut TIME NOT NULL,
-    heure_fin TIME NOT NULL,
+    duree_prevue INT COMMENT 'Durée prévue en minutes, à définir par l''administrateur',
     client_nom VARCHAR(100) NOT NULL,
     client_prenom VARCHAR(100) NOT NULL,
     client_email VARCHAR(255) NOT NULL,
@@ -42,6 +32,17 @@ CREATE TABLE cf_reservations (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (service_id) REFERENCES cf_services(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Table des horaires disponibles
+CREATE TABLE cf_horaires (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    jour_semaine TINYINT NOT NULL, -- 1=Lundi, 7=Dimanche
+    heure_debut TIME NOT NULL,     -- 07:00
+    heure_fin TIME NOT NULL,       -- 18:00
+    intervalle_minutes INT NOT NULL DEFAULT 15,
+    actif BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Table des jours fériés ou fermetures exceptionnelles
@@ -65,10 +66,10 @@ CREATE TABLE cf_emails (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Données initiales pour les services
-INSERT INTO cf_services (nom, description, duree_minutes) VALUES
-('Service 1', 'Description du service 1', 120),
-('Service 2', 'Description du service 2', 180),
-('Service 3', 'Description du service 3', 240);
+INSERT INTO cf_services (nom, description, duree_estimee_min, duree_estimee_max) VALUES
+('Service 1', 'Description du service 1', 120, 240),
+('Service 2', 'Description du service 2', 180, 360),
+('Service 3', 'Description du service 3', 240, 480);
 
 -- Données initiales pour les horaires
 INSERT INTO cf_horaires (jour_semaine, heure_debut, heure_fin, intervalle_minutes) VALUES
