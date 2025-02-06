@@ -1,71 +1,121 @@
-[...début du formulaire inchangé...]
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation - CleanFab</title>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4 max-w-2xl">
+        <h1 class="text-3xl font-bold text-center mb-8">Réservation</h1>
 
-            <!-- Étape 2: Informations véhicule -->
+        <form id="reservation-form" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <!-- Étape 1: Service souhaité -->
             <div class="mb-6">
-                <h2 class="text-xl font-semibold mb-4">2. Votre véhicule</h2>
-                <p class="text-gray-600 mb-4 italic">
-                    Ces informations sont facultatives. Vous pouvez les compléter maintenant 
-                    ou les communiquer plus tard par téléphone.
-                </p>
+                <h2 class="text-xl font-semibold mb-4">1. Service souhaité (facultatif)</h2>
+                <div class="space-y-3">
+                    <label class="flex items-center p-3 border rounded">
+                        <input type="radio" name="service" value="interieur" class="mr-3">
+                        <span class="text-lg">Nettoyage intérieur</span>
+                    </label>
+
+                    <label class="flex items-center p-3 border rounded">
+                        <input type="radio" name="service" value="exterieur" class="mr-3">
+                        <span class="text-lg">Nettoyage extérieur</span>
+                    </label>
+
+                    <label class="flex items-center p-3 border rounded">
+                        <input type="radio" name="service" value="complet" class="mr-3">
+                        <span class="text-lg">Formule complète</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Étape 2: Date et heure -->
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold mb-4">2. Date et heure du rendez-vous</h2>
                 
-                <!-- Type de véhicule -->
+                <!-- Calendrier -->
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2">
-                        Type de véhicule (facultatif)
+                        Date souhaitée *
                     </label>
-                    <select class="w-full p-2 border rounded">
-                        <option value="">Sélectionnez le type</option>
-                        <option value="voiture">Voiture</option>
-                        <option value="camionnette">Camionnette</option>
-                        <option value="mobilhome">Mobil-home</option>
-                        <option value="camion">Camion</option>
-                    </select>
+                    <input type="date" id="date" class="w-full p-2 border rounded" required>
                 </div>
 
-                <!-- Marque -->
+                <!-- Créneau horaire -->
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2">
-                        Marque (facultatif)
+                        Heure souhaitée *
                     </label>
-                    <select class="w-full p-2 border rounded">
-                        <option value="">Sélectionnez la marque</option>
-                        <!-- Dynamiquement rempli selon le type -->
+                    <select id="time-slot" class="w-full p-2 border rounded" required>
+                        <option value="">Sélectionnez un créneau</option>
                     </select>
                 </div>
+            </div>
 
-                <!-- Modèle -->
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2">
-                        Modèle (facultatif)
-                    </label>
-                    <select class="w-full p-2 border rounded">
-                        <option value="">Sélectionnez le modèle</option>
-                        <!-- Dynamiquement rempli selon la marque -->
-                    </select>
+            <!-- Étape 3: Vos coordonnées -->
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold mb-4">3. Vos coordonnées</h2>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">
+                            Nom *
+                        </label>
+                        <input type="text" id="lastname" class="w-full p-2 border rounded" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">
+                            Prénom *
+                        </label>
+                        <input type="text" id="firstname" class="w-full p-2 border rounded" required>
+                    </div>
                 </div>
 
-                <!-- Période -->
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2">
-                        Période (facultatif)
+                        Téléphone *
                     </label>
-                    <select class="w-full p-2 border rounded">
-                        <option value="">Sélectionnez la période</option>
-                        <option value="2021-2025">2021-2025</option>
-                        [... autres options ...]
-                    </select>
+                    <input type="tel" id="phone" class="w-full p-2 border rounded" required>
                 </div>
 
-                <!-- Particularités -->
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2">
-                        Particularités ou message (facultatif)
+                        Email *
+                    </label>
+                    <input type="email" id="email" class="w-full p-2 border rounded" required>
+                </div>
+            </div>
+
+            <!-- Étape 4: Informations complémentaires -->
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold mb-4">4. Informations complémentaires (facultatif)</h2>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">
+                        Message ou précisions sur votre véhicule
                     </label>
                     <textarea 
                         class="w-full p-2 border rounded" 
                         rows="3"
-                        placeholder="Ex: type de véhicule, couleur, particularités..."></textarea>
+                        placeholder="Type de véhicule, particularités, demandes spécifiques..."></textarea>
                 </div>
             </div>
 
-[...reste du formulaire inchangé...]
+            <p class="text-sm text-gray-600 mb-4">* Champs obligatoires</p>
+
+            <!-- Bouton d'envoi -->
+            <div class="flex items-center justify-center">
+                <button 
+                    type="submit" 
+                    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Demander le rendez-vous
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="form_validation.js"></script>
+</body>
+</html>
