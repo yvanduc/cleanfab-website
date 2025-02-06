@@ -3,15 +3,32 @@
 ## 1. Architecture du Site
 
 ### 1.1 Pages Principales
-- **Accueil** : Vitrine principale avec slider de réalisations
-- **Services** : Détail des prestations de detailing
-- **Galerie** : Photos avant/après, projets réalisés
-- **À Propos** : Histoire, valeurs, expertise
-- **Contact** : Formulaire et informations de contact
-- **Blog/Actualités** : Articles techniques, conseils, nouveautés
+- **Accueil** : 
+  * Logo + "Services de Détailing Automobile Professionnel"
+  * Listbox avec 5 lignes :
+    - Véhicule personnel
+    - Camionnette de chantier
+    - Mobil Home
+    - Camion
+    - etc
+  * Images de fond :
+    - Mobile/Tablette : Une image fixe en background
+    - Desktop : Slider de 4 images
+
+- **Services** : 
+  * Détail des 3 services proposés
+  * Image en background ou en haut de page
+
+- **Contact** : 
+  * Formulaire de rendez-vous
+  * Informations de contact :
+    - Adresse
+    - Téléphone
+    - Email
+  * Google Maps intégré
 
 ### 1.2 Navigation
-- Menu principal responsive
+- Pas de menu principal (navigation par scroll)
 - Call-to-action pour devis/réservation
 - Barre de navigation fixe sur desktop
 - Menu hamburger sur mobile/tablette
@@ -23,15 +40,18 @@
 - Design responsive (Mobile, Tablette, Desktop)
 - Optimisation SEO
 - Performance et temps de chargement optimisés
-- Formulaires de contact sécurisés
+- Formulaires de contact sécurisés avec :
+  * Choix du type de véhicule
+  * Marque
+  * Modèle
+  * Année
+  * Option spéciale pour OLDTIMER
 - Intégration réseaux sociaux
-- Newsletter
 
 ### 2.2 Fonctionnalités Spécifiques
-- Système de réservation en ligne
-- Galerie photos avant/après interactive
-- Calculateur de devis automatique
-- Chat en direct (optionnel)
+- Système de réservation en ligne :
+  * Gestion des créneaux horaires
+  * Prévention des doubles réservations
 - Espace client (futur développement)
 
 ## 3. Contenu et Médias
@@ -44,8 +64,7 @@
 - Fiches services détaillées
 
 ### 3.2 Éléments Interactifs
-- Slider d'images en page d'accueil
-- Pop-up promotionnels
+- Slider d'images en page d'accueil (version desktop)
 - Formulaires dynamiques
 - Carte Google Maps
 - Boutons de partage social
@@ -63,7 +82,6 @@
 - WP Rocket (Cache)
 - Wordfence (Sécurité)
 - Contact Form 7
-- WooCommerce (si e-commerce prévu)
 
 ### 4.3 Performance
 - Optimisation des images
@@ -72,8 +90,4 @@
 - CDN pour les ressources statiques
 
 ## 5. Futures Évolutions
-- E-commerce pour produits
 - Espace client personnalisé
-- Système de fidélité
-- Application mobile
-- Blog multilingue
