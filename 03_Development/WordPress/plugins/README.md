@@ -2,28 +2,13 @@
 
 ## Plugins Essentiels
 
-### E-commerce et Réservation
-- [ ] WooCommerce
-- [ ] WooCommerce Bookings (si nécessaire)
-
-### Multilingue
-- [ ] WPML (Gestion BE/FR)
-  - WPML Multilingual CMS
-  - WPML String Translation
-  - WPML Translation Management
+### Formulaires et Custom Fields
+- [ ] Advanced Custom Fields PRO
+- [ ] Contact Form 7
 
 ### Sécurité et Performance
 - [ ] Wordfence Security
-- [ ] WP Rocket ou LiteSpeed Cache
 - [ ] UpdraftPlus (Sauvegardes)
-
-### SEO et Analyse
-- [ ] Yoast SEO
-- [ ] Google Analytics for WordPress (si nécessaire)
-
-### Développement
-- [ ] Advanced Custom Fields PRO
-- [ ] Classic Editor (si nécessaire)
 
 ## Procédure d'Installation
 
