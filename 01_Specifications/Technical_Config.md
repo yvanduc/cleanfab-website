@@ -46,7 +46,6 @@ CREATE TABLE wp_cleanfab_time_slots (
   * mysqli
   * curl
   * gd
-  * intl (pour WPML)
 
 ### 2.2 Sécurité
 - SSL/HTTPS activé
