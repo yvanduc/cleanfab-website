@@ -15,8 +15,8 @@
 - Accent métallique : #CCCCCC
 
 ## 3. Typographie
-- Titres : Police sans-serif moderne
-- Corps de texte : Police sans-serif claire
+- Titres : Staatliches
+- Corps de texte : Montserrat
 - Tailles de police :
   * H1 : 2.5rem
   * H2 : 2rem
