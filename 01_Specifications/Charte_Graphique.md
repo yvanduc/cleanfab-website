@@ -23,6 +23,13 @@
   * H3 : 1.75rem
   * Corps : 1rem
   * Small : 0.875rem
+ 
+- Tailles de police : Smartphone
+  * H1 : 2rem
+  * H2 : 1.75rem
+  * H3 : 1.5rem
+  * Corps : 1rem
+  * Small : 0.875rem
 
 ## 4. Styles des Composants
 ### Boutons
